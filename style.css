@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  /*height: 2000px;*/
+  font-family: 'Economica', sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.banner {
+  margin-bottom: 0px;
+  opacity: 0.3;
+  color: #eee;
+  background-color: black;
+  width: 100vw;
+  height: 600px;
+  background: url('chicago-skyline600.jpg');
+  background-size: cover;
+  background-position: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header {
+  position: absolute;
+  color: #fff;
+  background: gray;
+  text-align: center;
+  width: 100%;
+  height: 110px;
+  z-index: 999;
+
+}
+
+.header > * {
+  position: fixed;
+
+}
+
+.nav-header {
+  position: relative;
+  left: 110px;
+  width: calc(100% - 110px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  right: 0;
+  list-style: none;
+  padding: 40px;
+}
+
+.list-item {
+  font-size: 1.3em;
+}
+
+.line {
+  position: absolute;
+  top: calc(50% + 15px);
+  height: 2px;
+  width: 0px;
+  background-color: white;
+  right: -100px;
+  transition: all 0.2s ease-out;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  width: 110px;
+  height: 110px;
+  z-index: 1000;
+  background-color: darkslateblue;
+}
+
