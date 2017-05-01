@@ -4,44 +4,65 @@ $(document).ready(function() {
     $listItem = $('.list-item'),
     $list = $('.list'),
     $line = $('.line'),
-    $first = $listItem.first(),
     $body = $('body'),
     $navHeader = $('.nav-header'),
     $bannerText = $('#banner-text'),
     $window = $(window);
 
   let
+    $selectedNav = $listItem.first(),
     showNav = true;
 
   // set initial line position
   setTimeout(() => {
     $line.css({
-      left: $first.position().left,
-      width: $first.width()
+      left: $selectedNav.position().left,
+      width: $selectedNav.width()
     });
   }, 200);
 
   // move line on click
   $list.on('click', 'li', function() {
     const $this = $(this);
-    $line.css({
-      left: $this.position().left,
-      width: $this.width()
-    });
+    moveLine($this.position().left, $this.width());
+    $selectedNav = $this;
   });
+
+  // move line on hover
+  $listItem.hover(function(){
+    const $this = $(this);
+    setTimeout(function() {
+      moveLine($this.position().left, $this.width());
+    }, 500);
+  }, function() {
+    setTimeout(function() {
+      moveLine($selectedNav.position().left, $selectedNav.width());
+    }, 500);
+  });
+
+  // move line under nav options
+  function moveLine(left, width) {
+    $line.css({
+      left,
+      width
+    });
+  }
 
   // toggle navbar
   function toggleNav(top) {
-    let operator = showNav ? '-' : '+';
-    function toggle() {
-      $navHeader.animate({left: `${operator}=1000px`});
+    let
+      operator = showNav ? '-' : '+';
+    function toggle(width) {
+      $navHeader.animate({left: `${operator}=${width}px`});
       showNav = !showNav;
     }
     if ((showNav && top > 25) || (!showNav && top <= 25)) {
-      toggle();
+      let viewWidth = $body.width();
+      toggle(viewWidth);
     }
   }
 
+  // move element up
   function parallaxUp(node, rate) {
     node.css({top: rate});
   }
@@ -51,7 +72,6 @@ $(document).ready(function() {
     let top = $body.scrollTop();
     toggleNav(top);
     parallaxUp($bannerText, top * -1.15);
-    console.log(top);
   });
 
 });

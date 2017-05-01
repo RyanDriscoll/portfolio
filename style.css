@@ -72,6 +72,7 @@ body {
 
 .list-item {
   font-size: 1.3em;
+  cursor: pointer;
 }
 
 .line {
@@ -81,7 +82,7 @@ body {
   width: 0px;
   background-color: white;
   right: -100px;
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .logo {
