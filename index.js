@@ -2,20 +2,56 @@ $(document).ready(function() {
 
   const
     $listItem = $('.list-item'),
+    $list = $('.list'),
     $line = $('.line'),
-    $initialLinePos = $listItem.first().position().left;
+    $first = $listItem.first(),
+    $body = $('body'),
+    $navHeader = $('.nav-header'),
+    $bannerText = $('#banner-text'),
+    $window = $(window);
 
-  $listItem.each(function() {
-    let $this = $(this);
-    console.log($initialLinePos, $this.position().left);
-    $this.click(() => $line.css({
+  let
+    showNav = true;
+
+  // set initial line position
+  setTimeout(() => {
+    $line.css({
+      left: $first.position().left,
+      width: $first.width()
+    });
+  }, 200);
+
+  // move line on click
+  $list.on('click', 'li', function() {
+    const $this = $(this);
+    $line.css({
       left: $this.position().left,
       width: $this.width()
-    }));
+    });
   });
 
+  // toggle navbar
+  function toggleNav(top) {
+    let operator = showNav ? '-' : '+';
+    function toggle() {
+      $navHeader.animate({left: `${operator}=1000px`});
+      showNav = !showNav;
+    }
+    if ((showNav && top > 25) || (!showNav && top <= 25)) {
+      toggle();
+    }
+  }
 
-  window.onscroll = function() {
-    console.log(document.getElementsByTagName('body')[0].scrollTop);
-  };
+  function parallaxUp(node, rate) {
+    node.css({top: rate});
+  }
+
+
+  $window.scroll(function() {
+    let top = $body.scrollTop();
+    toggleNav(top);
+    parallaxUp($bannerText, top * -1.15);
+    console.log(top);
+  });
+
 });

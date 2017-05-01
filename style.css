@@ -28,30 +28,37 @@ body {
   z-index: 1;
 }
 
-.header {
+.banner h2 {
+  font-size: 10em;
   position: absolute;
+  margin-top: 200px;
+  margin-left: 120px;
+}
+
+.header {
+  position: fixed;
   color: #fff;
-  background: gray;
   text-align: center;
   width: 100%;
   height: 110px;
   z-index: 999;
-
+  display: flex;
 }
 
-.header > * {
+/*.header > * {
   position: fixed;
 
-}
+}*/
 
 .nav-header {
+  background: gray;
   position: relative;
-  left: 110px;
   width: calc(100% - 110px);
-  height: 100%;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
 }
 
 .list {
@@ -86,5 +93,9 @@ body {
   height: 110px;
   z-index: 1000;
   background-color: darkslateblue;
+}
+
+section {
+  min-height: 300px;
 }
 
