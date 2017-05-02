@@ -87,6 +87,7 @@ body {
   height: 110px;
   z-index: 1000;
   background-color: darkblue;
+  cursor: pointer;
 }
 
 .slide {

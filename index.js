@@ -55,7 +55,12 @@ $(document).ready(function() {
       elementId = '#' + $this.text().toLowerCase();
     moveLine($this.position().left, $this.width());
     $selectedNav = $this;
-    scrollToPosition(elementId);
+    scrollToPosition($(elementId));
+  });
+
+  // scroll to home on logo click
+  $logo.click(function() {
+    scrollToPosition($body);
   });
 
   // move line on hover
@@ -81,10 +86,9 @@ $(document).ready(function() {
   }
 
   // scroll to section top
-  function scrollToPosition(id) {
-    const section = $(id);
+  function scrollToPosition(element) {
     $body.animate({
-      scrollTop: section.offset().top
+      scrollTop: element.offset().top
     });
   }
 
