@@ -2,6 +2,11 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+html {
+  background: url('chicago-skyline600.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 body {
   /*height: 2000px;*/
   font-family: 'Economica', sans-serif;
@@ -13,19 +18,17 @@ body {
 
 .banner {
   margin-bottom: 0px;
-  opacity: 0.3;
   color: #eee;
-  background-color: black;
+  /*background-color: black;*/
   width: 100vw;
-  height: 600px;
-  background: url('chicago-skyline600.jpg');
-  background-size: cover;
-  background-position: 50%;
+  height: 100vh;
+  /*background: url('chicago-skyline600.jpg');*/
+  /*background-size: cover;*/
+  /*background-position: 50%;*/
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
 }
 
 .banner h2 {
@@ -33,6 +36,7 @@ body {
   position: absolute;
   margin-top: 200px;
   margin-left: 120px;
+  z-index: 1;
 }
 
 .header {
@@ -45,10 +49,12 @@ body {
   display: flex;
 }
 
-/*.header > * {
-  position: fixed;
+#main {
+  position: relative;
+  top: 100vh;
+  height: 100%;
+}
 
-}*/
 
 .nav-header {
   background: gray;
@@ -96,7 +102,32 @@ body {
   background-color: darkslateblue;
 }
 
-section {
-  min-height: 300px;
+.slide {
+  position: relative;
+  min-height: 100vh;
+  background-color: blue;
+  z-index: 3;
 }
 
+.slide-content {
+  position: fixed;
+  top: 0;
+  left: 120px;
+  font-size: 2.5rem;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects {
+  background-color: green;
+}
+#resume {
+  background-color: yellow;
+}
+#contact {
+  background-color: red;
+}
