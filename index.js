@@ -7,6 +7,7 @@ $(document).ready(function() {
     $body = $('body'),
     $navHeader = $('.nav-header'),
     $bannerText = $('#banner-text'),
+    $bannerTextLine2 = $bannerText.next(),
     $logo = $('.logo'),
     $slide = $('.slide'),
     $about = $($slide.children()[0]),
@@ -21,7 +22,6 @@ $(document).ready(function() {
     showNav = true,
     enter,
     leave;
-
   // toggle navbar on logo hover
   $logo.hover(function() {
     if (!showNav) {
@@ -78,8 +78,14 @@ $(document).ready(function() {
   }
 
   // scroll element up at rate
-  function parallaxUp(element, rate) {
-    element.css({top: rate});
+  function parallaxUp(element, top, rate) {
+    let
+      pace = top * rate,
+      opac = 1 - (top * (1 / 350));
+    element.css({
+      top: pace,
+      opacity: opac
+    });
   }
 
   // clip slide text
@@ -95,9 +101,10 @@ $(document).ready(function() {
     let
       top = $body.scrollTop(),
       windowHeight = window.innerHeight;
-
+console.log(top);
     // parallax banner text
-    parallaxUp($bannerText, top * -1.35);
+    parallaxUp($bannerText, top, -1.35);
+    parallaxUp($bannerTextLine2, top, -1.02);
 
     // toggle navbar on scroll
     if ((showNav && top > 25) || (!showNav && top <= 25)) {

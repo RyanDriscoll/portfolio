@@ -15,13 +15,17 @@ body {
   position: relative;
 }
 
-.banner h2 {
+[id^="banner-text"] {
   font-size: 10em;
   color: #eee;
   position: absolute;
-  margin-top: 33vh;
+  margin-top: 40vh;
   margin-left: 120px;
   z-index: 1;
+}
+
+#banner-text-line2 {
+  margin-top: 63vh;
 }
 
 .header {
