@@ -110,6 +110,16 @@ body {
   justify-content: center;
 }
 
+.section-title {
+  margin-bottom: 50px;
+  font-size: 4rem;
+}
+
+.section-headline {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
 #projects {
   background-color: green;
 }
