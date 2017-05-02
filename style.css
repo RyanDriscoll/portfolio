@@ -96,6 +96,8 @@ body {
   height: 100vh;
   background-color: #3949ab;
   z-index: 3;
+  display: flex;
+  flex-direction: row;
 }
 
 .slide-content {
@@ -105,9 +107,16 @@ body {
   font-size: 2.5rem;
   color: #eee;
   height: 100vh;
+  width: calc(100% * 2/3);
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+
+.slide-header {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
