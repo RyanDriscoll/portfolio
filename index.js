@@ -52,7 +52,7 @@ $(document).ready(function() {
   $list.on('click', 'li', function() {
     const
       $this = $(this),
-      elementId = '#' + $this.text().toLowerCase();
+      elementId = '#' + $this.data('name');
     moveLine($this.position().left, $this.width());
     $selectedNav = $this;
     scrollToPosition($(elementId));
