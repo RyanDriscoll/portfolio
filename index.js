@@ -20,10 +20,12 @@ $(document).ready(function() {
     $selectedNav = $listItem.first(),
     viewWidth = $body.width(),
     showNav = true,
+    windowY,
     enter,
     leave;
+
   // toggle navbar on logo hover
-  $logo.hover(function() {
+  $logo.parent().hover(function() {
     if (!showNav) {
       toggleNav(viewWidth);
     }
@@ -41,11 +43,19 @@ $(document).ready(function() {
     });
   }, 200);
 
-  // move line on click
+  // check mouse position
+  $body.on('mousemove', function(event) {
+    windowY = event.pageY - $body.scrollTop();
+  });
+
+  // move line and scroll on nav click
   $list.on('click', 'li', function() {
-    const $this = $(this);
+    const
+      $this = $(this),
+      elementId = '#' + $this.text().toLowerCase();
     moveLine($this.position().left, $this.width());
     $selectedNav = $this;
+    scrollToPosition(elementId);
   });
 
   // move line on hover
@@ -67,6 +77,14 @@ $(document).ready(function() {
     $line.css({
       left,
       width
+    });
+  }
+
+  // scroll to section top
+  function scrollToPosition(id) {
+    const section = $(id);
+    $body.animate({
+      scrollTop: section.offset().top
     });
   }
 
@@ -101,13 +119,13 @@ $(document).ready(function() {
     let
       top = $body.scrollTop(),
       windowHeight = window.innerHeight;
-console.log(top);
+
     // parallax banner text
     parallaxUp($bannerText, top, -1.35);
     parallaxUp($bannerTextLine2, top, -1.02);
 
     // toggle navbar on scroll
-    if ((showNav && top > 25) || (!showNav && top <= 25)) {
+    if ((windowY > 110) && (showNav && top > 25) || (!showNav && top <= 25)) {
       toggleNav(viewWidth);
     }
 
