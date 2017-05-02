@@ -19,14 +19,14 @@ body {
   font-size: 10em;
   color: #eee;
   position: absolute;
-  margin-top: 200px;
+  margin-top: 33vh;
   margin-left: 120px;
   z-index: 1;
 }
 
 .header {
   position: fixed;
-  color: #fff;
+  color: #eee;
   text-align: center;
   width: 100%;
   height: 110px;
@@ -41,7 +41,7 @@ body {
 }
 
 .nav-header {
-  background: gray;
+  background: transparent;
   position: relative;
   width: calc(100% - 110px);
   height: 110px;
@@ -69,9 +69,9 @@ body {
   top: calc(50% + 15px);
   height: 2px;
   width: 0px;
-  background-color: white;
+  background-color: #eee;
   right: -100px;
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .logo {
@@ -82,7 +82,7 @@ body {
   width: 110px;
   height: 110px;
   z-index: 1000;
-  background-color: darkslateblue;
+  background-color: darkblue;
 }
 
 .slide {
@@ -97,7 +97,7 @@ body {
   top: 0;
   left: 120px;
   font-size: 2.5rem;
-  color: white;
+  color: #eee;
   height: 100vh;
   display: none;
   flex-direction: column;
@@ -109,7 +109,7 @@ body {
   background-color: green;
 }
 #resume {
-  background-color: yellow;
+  background-color: purple;
 }
 #contact {
   background-color: red;

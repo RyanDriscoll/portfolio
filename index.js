@@ -54,7 +54,7 @@ $(document).ready(function() {
     clearTimeout(leave);
     enter = setTimeout(function() {
       moveLine($this.position().left, $this.width());
-    }, 300);
+    }, 100);
   }, function() {
     clearTimeout(enter);
     leave = setTimeout(function() {
