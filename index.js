@@ -85,7 +85,8 @@ $(document).ready(function() {
   // clip slide text
   function showSlideText(element, offsetTop, offsetBottom) {
     element.css({
-      'clip-path': `inset(${offsetTop}px 0 ${offsetBottom}px`
+      'clip-path': `inset(${offsetTop}px 0 ${offsetBottom}px`,
+      display: 'flex'
     });
   }
 
