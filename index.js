@@ -9,10 +9,10 @@ $(document).ready(function() {
     $bannerText = $('#banner-text'),
     $logo = $('.logo'),
     $slide = $('.slide'),
-    $about = $slide.children(':nth-child(1)'),
-    $projects = $slide.children(':nth-child(2)'),
-    $resume = $slide.children(':nth-child(3)'),
-    $contact = $slide.children(':nth-child(4)'),
+    $about = $($slide.children()[0]),
+    $projects = $($slide.children()[1]),
+    $resume = $($slide.children()[2]),
+    $contact = $($slide.children()[3]),
     $window = $(window);
 
   let
@@ -82,12 +82,10 @@ $(document).ready(function() {
     element.css({top: rate});
   }
 
+  // clip slide text
   function showSlideText(element, offsetTop, offsetBottom) {
-    let
-      top = offsetTop,
-      bottom = offsetBottom;
     element.css({
-      'clip-path': `inset(${top}px 0 ${bottom}px`
+      'clip-path': `inset(${offsetTop}px 0 ${offsetBottom}px`
     });
   }
 
@@ -96,37 +94,36 @@ $(document).ready(function() {
     let
       top = $body.scrollTop(),
       windowHeight = window.innerHeight;
+
+    // parallax banner text
     parallaxUp($bannerText, top * -1.35);
 
+    // toggle navbar on scroll
     if ((showNav && top > 25) || (!showNav && top <= 25)) {
       toggleNav(viewWidth);
     }
 
-    // $slideContent.first().css({
-    //   'clip-path': `inset(${(600 - top) - 390}px 0 0)`
-    // });
-    console.log(600 - top, (600 + windowHeight)
-    + top);
+    // clip slide sections
     showSlideText(
       $about,
       windowHeight - top,
       (windowHeight * -1) + top
     );
-    // showSlideText(
-    //   $projects,
-    //   (600 + windowHeight) - top,
-    //   (600 + (windowHeight * 2)) - top
-    // );
-    // showSlideText(
-    //   $resume,
-    //   (600 + (windowHeight * 2)) - top,
-    //   (600 + (windowHeight * 3)) - top
-    // );
-    // showSlideText(
-    //   $contact,
-    //   (600 + (windowHeight * 3)) - top,
-    //   (600 + (windowHeight * 4)) - top
-    // );
+    showSlideText(
+      $projects,
+      (windowHeight * 2) - top,
+      (windowHeight * -2) + top
+    );
+    showSlideText(
+      $resume,
+      (windowHeight * 3) - top,
+      (windowHeight * -3) + top
+    );
+    showSlideText(
+      $contact,
+      (windowHeight * 4) - top,
+      (windowHeight * -4) + top
+    );
   });
 
 });
