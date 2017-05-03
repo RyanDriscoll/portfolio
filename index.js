@@ -14,13 +14,19 @@ $(document).ready(function() {
     $projects = $($slide.children()[1]),
     $resume = $($slide.children()[2]),
     $contact = $($slide.children()[3]),
+    $slideRight = $('.slide-right'),
+    $slideRightAbout = $($slideRight[0]),
+    $slideRightProjects = $($slideRight[1]),
+    $slideRightResume = $($slideRight[2]),
+    $slideRightContact = $($slideRight[3]),
     $window = $(window);
 
   let
     $selectedNav = $listItem.first(),
     viewWidth = $body.width(),
     showNav = true,
-    windowY,
+    showAbout = false,
+    windowY = 120,
     enter,
     leave;
 
@@ -113,7 +119,7 @@ $(document).ready(function() {
   // clip slide text
   function showSlideText(element, offsetTop, offsetBottom) {
     element.css({
-      'clip-path': `inset(${offsetTop}px 0 ${offsetBottom}px`,
+      '-webkit-clip-path': `inset(${offsetTop}px 0 ${offsetBottom}px`,
       display: 'flex'
     });
   }
@@ -129,8 +135,25 @@ $(document).ready(function() {
     parallaxUp($bannerTextLine2, top, -1.02);
 
     // toggle navbar on scroll
-    if ((windowY > 110) && (showNav && top > 25) || (!showNav && top <= 25)) {
+    if
+      ((windowY > 110) &&
+      (showNav && top > 25) ||
+      (!showNav && top <= 25)) {
       toggleNav(viewWidth);
+    }
+    console.log(top / windowHeight);
+
+    // slide-right animations
+    switch (true) {
+
+      case (top / windowHeight >= 0.75 && top / windowHeight <= 1.25) :
+        $slideRightAbout.removeClass('slide-right-hide');
+        break;
+      case (top / windowHeight < 0.75 || top / windowHeight > 1.25) :
+        $slideRightAbout.addClass('slide-right-hide');
+        break;
+      default:
+        break;
     }
 
     // clip slide sections
