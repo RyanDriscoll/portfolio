@@ -124,6 +124,35 @@ $(document).ready(function() {
     });
   }
 
+  function switchSlideRight(top, windowHeight) {
+    // slide-right animations
+    let ratio = top / windowHeight;
+    if (ratio >= 0.75 && ratio <= 1.25) {
+      $slideRightAbout.removeClass('slide-right-hide');
+    }
+    if (ratio < 0.75 || ratio > 1.25) {
+      $slideRightAbout.addClass('slide-right-hide');
+    }
+    if (ratio >= 1.75 && ratio <= 2.25) {
+      $slideRightProjects.removeClass('slide-right-hide');
+    }
+    if (ratio < 1.75 || ratio > 2.25) {
+      $slideRightProjects.addClass('slide-right-hide');
+    }
+    if (ratio >= 2.75 && ratio <= 3.25) {
+      $slideRightResume.removeClass('slide-right-hide');
+    }
+    if (ratio < 2.75 || ratio > 3.25) {
+      $slideRightResume.addClass('slide-right-hide');
+    }
+    if (ratio >= 3.75 && ratio <= 4.25) {
+      $slideRightContact.removeClass('slide-right-hide');
+    }
+    if (ratio < 3.75 || ratio > 4.25) {
+      $slideRightContact.addClass('slide-right-hide');
+    }
+  }
+
   // window scroll events
   $window.scroll(function() {
     let
@@ -141,20 +170,8 @@ $(document).ready(function() {
       (!showNav && top <= 25)) {
       toggleNav(viewWidth);
     }
-    console.log(top / windowHeight);
-
-    // slide-right animations
-    switch (true) {
-
-      case (top / windowHeight >= 0.75 && top / windowHeight <= 1.25) :
-        $slideRightAbout.removeClass('slide-right-hide');
-        break;
-      case (top / windowHeight < 0.75 || top / windowHeight > 1.25) :
-        $slideRightAbout.addClass('slide-right-hide');
-        break;
-      default:
-        break;
-    }
+    // slide content in and out
+    switchSlideRight(top, windowHeight);
 
     // clip slide sections
     showSlideText(
