@@ -125,12 +125,12 @@ body {
 
 .section-title {
   margin-bottom: 85px;
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 .section-headline {
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
 }
 
 .circle-pic {
@@ -176,7 +176,7 @@ body {
 }
 
 .slide-right p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: justify;
   line-height: 2rem;
   width: calc(100% * 2/3);
@@ -190,6 +190,8 @@ body {
 
 #projects {
   background-color: #005662;
+  background-image: url('laptop.png');
+  background-size: 200px;
 }
 #resume {
   background-color: #6f74dd;
