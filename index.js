@@ -123,31 +123,32 @@ $(document).ready(function() {
     });
   }
 
+  // slide-right animations
   function switchSlideRight(top, windowHeight) {
-    // slide-right animations
     let ratio = top / windowHeight;
-    if (ratio >= 0.75 && ratio <= 1.25) {
+
+    if (ratio >= 0.75 && ratio <= 1.75) {
       $slideRightAbout.removeClass('slide-right-hide');
     }
-    if (ratio < 0.75 || ratio > 1.25) {
+    if (ratio < 0.75 || ratio > 1.75) {
       $slideRightAbout.addClass('slide-right-hide');
     }
-    if (ratio >= 1.75 && ratio <= 2.25) {
+    if (ratio >= 1.75 && ratio <= 2.75) {
       $slideRightProjects.removeClass('slide-right-hide');
     }
-    if (ratio < 1.75 || ratio > 2.25) {
+    if (ratio < 1.75 || ratio > 2.75) {
       $slideRightProjects.addClass('slide-right-hide');
     }
-    if (ratio >= 2.75 && ratio <= 3.25) {
+    if (ratio >= 2.75 && ratio <= 3.75) {
       $slideRightResume.removeClass('slide-right-hide');
     }
-    if (ratio < 2.75 || ratio > 3.25) {
+    if (ratio < 2.75 || ratio > 3.75) {
       $slideRightResume.addClass('slide-right-hide');
     }
-    if (ratio >= 3.75 && ratio <= 4.25) {
+    if (ratio >= 3.75 && ratio <= 4.75) {
       $slideRightContact.removeClass('slide-right-hide');
     }
-    if (ratio < 3.75 || ratio > 4.25) {
+    if (ratio < 3.75 || ratio > 4.75) {
       $slideRightContact.addClass('slide-right-hide');
     }
   }
