@@ -5,7 +5,7 @@
 }
 
 html {
-  background: url('chicago-skyline600.jpg') no-repeat center center fixed;
+  background: url('assets/chicago-skyline600.png') no-repeat center center fixed;
   background-size: cover;
 }
 body {
@@ -141,7 +141,7 @@ body {
 }
 
 #profile-pic {
-  background: url('profile_pic_2.jpg');
+  background: url('assets/profile_pic_2.png');
   background-position: -80px -4px;
   background-size: 250px;
   background-repeat: no-repeat;
@@ -184,20 +184,24 @@ body {
 }
 #about {
   background-color: #3949ab;
-  background-image: url('coffee.png');
+  background-image: url('assets/coffee.png');
   background-size: 200px;
 }
 
 #projects {
   background-color: #005662;
-  background-image: url('laptop.png');
+  background-image: url('assets/laptop.png');
   background-size: 200px;
 }
 #resume {
   background-color: #6f74dd;
+  background-image: url('assets/books.png');
+  background-size: 200px;
 }
 #contact {
   background-color: #00838f;
+  background-image: url('assets/email.png');
+  background-size: 200px;
 }
 
 #footer {
