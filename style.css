@@ -148,7 +148,7 @@ body {
 }
 
 #fs-logo {
-  background: url('FS_logo.png');
+  background: url('assets/FS_logo.png');
   background-size: cover;
   background-position: 50% 50%;
 }
