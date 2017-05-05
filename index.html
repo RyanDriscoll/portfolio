@@ -3,6 +3,7 @@
 
 <head>
   <title>Ryan Driscoll Portfolio</title>
+  <script src="https://use.fontawesome.com/c8040b311b.js" async></script>
   <script src="jquery.min.js" defer></script>
   <script src="index.js" defer></script>
   <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
@@ -40,15 +41,19 @@
           </h2>
         </header>
       </div>
-      <div class="slide-right slide-right-hide">
+      <div class="slide-right slide-right-hide slide-right-about">
         <div class="flex-row">
           <div id="profile-pic" class="circle-pic shadow"></div>
-          <p>&#8220At Chicago Public Schools I used technology to reach more students and have a greater impact on their lives. When I couldn&#8217t find the tools I was looking for I decided to build them myself...&#8221
-          </p>
+          <div class="flex-col">
+            <p>&#8220At Chicago Public Schools I used technology to reach more students and have a greater impact on their lives. When I couldn&#8217t find the tools I was looking for I decided to build them myself...&#8221
+            </p>
+          </div>
         </div>
         <div class="flex-row">
-          <p>&#8220Self-study led to acceptance at Fullstack Academy, one of the top software engineering immersive programs in the country.&#8221
-          </p>
+          <div class="flex-col">
+            <p>&#8220Self-study led to acceptance at Fullstack Academy, one of the top software engineering immersive programs in the country.&#8221
+            </p>
+          </div>
           <a href="https://www.fullstackacademy.com/" target="_blank">
           <div id="fs-logo" class="circle-pic shadow"></div>
           </a>
@@ -66,8 +71,54 @@
           </h2>
         </header>
       </div>
-      <div class="slide-right slide-right-hide">
-        here's content
+      <div class="slide-right slide-right-hide slide-right-projects">
+        <div class="flex-row">
+          <div id="memail-logo" class="circle-pic shadow"></div>
+          <div class="flex-col">
+            <h3>MEmail</h3>
+            <p>MEmail is a quick and easy way to email yourself links to recipes, articles, or job postings you want to read later
+            </p>
+            <div class="flex-row icons">
+              <a href="https://chrome.google.com/webstore/detail/memail/fflpcmbjflhfimhfhgcdmgjinglgflhk" target="_blank">
+                <i class="fa fa-link" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/RyanDriscoll/memail" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-col">
+            <h3>Chicago Deaf Arts</h3>
+            <p>Chicago Deaf Arts is a non profit organization that helps make theater accessible for people with disabilities. I helped build their site during a 24 hour hackathon
+            </p>
+            <div class="flex-row icons">
+              <a href="http://chicagodart.azurewebsites.net/" target="_blank">
+                <i class="fa fa-link" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/chicagodart/chicagodart-theme" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div id="chidart-logo" class="circle-pic shadow"></div>
+        </div>
+        <div class="flex-row">
+          <div id="samepage-logo" class="circle-pic shadow"></div>
+          <div class="flex-col">
+            <h3>SamePage</h3>
+            <p>SamePage is a chrome extention that allows users to chat with other users currently visiting the same url
+            </p>
+            <div class="flex-row icons">
+              <a href="https://www.youtube.com/watch?v=2_RqDmflhjQ" target="_blank">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/RyanDriscoll/SamePage" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
       </div>
     </section>
     <section id="resume" class="slide">
@@ -81,8 +132,58 @@
           </h2>
         </header>
       </div>
-      <div class="slide-right slide-right-hide">
-        here's content
+      <div class="slide-right slide-right-hide slide-right-resume">
+        <div class="flex-col">
+          <h3>SKILLS</h3>
+          <div class="flex-row">
+            <h4>Proficient:</h4>
+            <p>JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, SQL, Git, HTML5, CSS3, Sass
+            </p>
+          </div>
+          <div class="flex-row">
+            <h4>Knowledgeable:</h4>
+            <p>PHP, Ruby, AngularJS 1.5, React-Native, Firebase, Websockets, Mocha, Bootstrap, Chrome-Extensions
+            </p>
+          </div>
+          <br>
+          <h3>EXPERIENCE</h3>
+          <div class="flex-row">
+            <h4>Chicago Public Schools</h4>
+            <h4>Chicago, IL</h4>
+          </div>
+          <div class="flex-row">
+            <h4>Transition Specialist</h4>
+            <h4>4/2012 - 8/2016</h4>
+          </div>
+          <ul class="list-resume">
+            <li>Promoted within two years to Transition Specialist charged with developing job readiness services for approximately 16,000 CPS high school students with disabilities
+            </li>
+            <li>Designed and implemented job readiness programs and instructional material for students including soft skills training, resume development, mock interviews, and referrals to a growing network of employer partners
+            </li>
+            <li>Developed and managed the job development data management system to track student data in order to quantify outcomes and report program performance
+            </li>
+            <li>Took on a leadership role within a small team of transition specialists; spearheaded effort to organize a job fair exclusively for students with disabilities; attended by over 500 students and 25 employer partners
+            </li>
+          </ul>
+          <br>
+          <h3>EDUCATION</h3>
+          <div class="flex-row">
+            <h4>Fullstack Academy</h4>
+            <h4>Chicago, IL</h4>
+          </div>
+          <div class="flex-row">
+            <h4>Full-time immersive software engineering program</h4>
+            <h4>2/2017</h4>
+          </div>
+          <div class="flex-row">
+            <h4>University of Wisconsin</h4>
+            <h4>Madison, WI</h4>
+          </div>
+          <div class="flex-row">
+            <h4>Bachelor of Arts - Theatre &amp Drama</h4>
+            <h4>5/2007</h4>
+          </div>
+        </div>
       </div>
     </section>
     <section id="contact" class="slide shadow">

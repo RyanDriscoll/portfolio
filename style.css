@@ -19,7 +19,6 @@ body {
 
 [id^="banner-text"] {
   font-size: 10em;
-  color: #eee;
   position: absolute;
   margin-top: 40vh;
   margin-left: 120px;
@@ -32,7 +31,6 @@ body {
 
 .header {
   position: fixed;
-  color: #eee;
   width: 100%;
   height: 110px;
   z-index: 999;
@@ -138,13 +136,13 @@ body {
   width: 150px;
   border-radius: 50%;
   margin: 10px;
+  background-repeat: no-repeat;
 }
 
 #profile-pic {
   background: url('assets/profile_pic_2.png');
   background-position: -80px -4px;
   background-size: 250px;
-  background-repeat: no-repeat;
 }
 
 #fs-logo {
@@ -153,7 +151,25 @@ body {
   background-position: 50% 50%;
 }
 
-.flex-row {
+#chidart-logo {
+  background: url('assets/chi-dart.png');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#memail-logo {
+  background: url('assets/memail_logo_5.png');
+  background-size: 205px;
+  background-position: 50% 50%;
+}
+#samepage-logo {
+  background: url('assets/samepage.png');
+  background-position: 4px 2px;
+  background-color: #ffffff;
+  background-size: 140px;
+}
+
+.flex-row, .flex-col {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -161,9 +177,27 @@ body {
   width: 100%;
 }
 
+.flex-col {
+  flex-direction: column;
+  width: calc(100% * 2/3);
+}
+
+.flex-col h3 {
+  font-size: 2rem;
+}
+
+.icons {
+  font-size: 2.5rem;
+  justify-content: center;
+}
+
+.icons i {
+  margin: 10px;
+}
+
 .slide-right {
   width: calc(50% - (100% / 12));
-  height: 70%;
+  height: 90%;
   align-items: center;
   position: absolute;
   right: calc(100% / 12);
@@ -179,8 +213,28 @@ body {
   font-size: 1.8rem;
   text-align: justify;
   line-height: 2rem;
-  width: calc(100% * 2/3);
   margin: 10px;
+  margin-bottom: 0;
+}
+
+.slide-right-projects p {
+  font-size: 1.4rem;
+}
+
+.slide-right-resume .flex-col {
+  width: 100%;
+  font-size: 1.4rem;
+  background-color: rgba(57,73,171,0.7);
+  border-radius: 3px;
+  padding: 10px;
+}
+.slide-right-resume p {
+  font-size: 1.4rem;
+  width: 75%;
+}
+.list-resume {
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 #about {
   background-color: #3949ab;
