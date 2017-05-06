@@ -409,4 +409,7 @@ body {
   .skills {
     height: 15vh;
   }
+  .social {
+    padding-right: 50%;
+  }
 }
