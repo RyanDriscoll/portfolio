@@ -158,10 +158,6 @@ $(document).ready(function() {
     }
   }
 
-  // function switchSlideRightMobile(top, windowHeight) {
-  //   let ratio = top / windowHeight;
-  // }
-
   // window scroll events
   $window.scroll(function() {
     let
@@ -179,12 +175,9 @@ $(document).ready(function() {
       (!showNav && top <= 25)) {
       toggleNav(viewWidth);
     }
+
     // slide content in and out
-    // if (mobile) {
-    //   switchSlideRightMobile(top, windowHeight);
-    // } else {
-      switchSlideRight(top, windowHeight);
-    // }
+    switchSlideRight(top, windowHeight);
 
     // clip slide sections
     if (!mobile) {
