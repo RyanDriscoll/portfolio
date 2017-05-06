@@ -89,7 +89,7 @@ body {
   align-items: center;
 }
 
-.slide-content {
+.slide-left {
   position: fixed;
   top: 0;
   left: calc(100% / 12);
@@ -320,7 +320,7 @@ body {
   .slide {
     flex-direction: row;
   }
-  .slide-content {
+  .slide-left {
     align-items: center;
   }
   .slide-right {
