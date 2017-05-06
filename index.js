@@ -93,8 +93,11 @@ $(document).ready(function() {
 
   // scroll to section top
   function scrollToPosition(element) {
+    let
+      top = element.offset().top,
+      position = mobile ? top - (viewWidth / 5) : top;
     $body.animate({
-      scrollTop: element.offset().top
+      scrollTop: position
     });
   }
 
