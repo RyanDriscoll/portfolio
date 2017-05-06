@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
   const
-    $listItem = $('.list-item'),
     $list = $('.list'),
+    $listItem = $list.children(),
     $line = $('.line'),
     $body = $('body'),
     $navHeader = $('.nav-header'),
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
   // toggle navbar
   function toggleNav(width) {
-    if (viewWidth < 1200) return;
+    if (viewWidth < 900) return;
     let operator = showNav ? '-' : '+';
     $navHeader.animate({left: `${operator}=${width}px`});
     showNav = !showNav;
