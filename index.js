@@ -30,6 +30,9 @@ $(document).ready(function() {
     enter,
     leave;
 
+  // add shadow on mobile
+  if (mobile) $navHeader.addClass('shadow');
+
   // toggle navbar on logo hover
   $logo.parent().hover(function() {
     if (!showNav) {
