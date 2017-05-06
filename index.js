@@ -24,6 +24,7 @@ $(document).ready(function() {
   let
     $selectedNav = $listItem.first(),
     viewWidth = $body.width(),
+    mobile = viewWidth < 900,
     showNav = true,
     windowY = 120,
     enter,
@@ -99,7 +100,7 @@ $(document).ready(function() {
 
   // toggle navbar
   function toggleNav(width) {
-    if (viewWidth < 900) return;
+    if (mobile) return;
     let operator = showNav ? '-' : '+';
     $navHeader.animate({left: `${operator}=${width}px`});
     showNav = !showNav;
@@ -154,6 +155,10 @@ $(document).ready(function() {
     }
   }
 
+  function switchSlideRightMobile(top, windowHeight) {
+    let ratio = top / windowHeight;
+  }
+
   // window scroll events
   $window.scroll(function() {
     let
@@ -172,7 +177,11 @@ $(document).ready(function() {
       toggleNav(viewWidth);
     }
     // slide content in and out
-    switchSlideRight(top, windowHeight);
+    if (mobile) {
+      switchSlideRightMobile(top, windowHeight);
+    } else {
+      switchSlideRight(top, windowHeight);
+    }
 
     // clip slide sections
     showSlideText(
