@@ -6,14 +6,12 @@
 
 html {
   background: url('assets/chicago-skyline600.png') no-repeat center center fixed;
-  background-size: auto 125vh;
+  background-size: cover;
   font-size: 100%;
-  min-height: 200vh;
 }
 
 body {
   font-family: 'Economica', sans-serif;
-  min-height: 200vh;
 }
 
 .container {
