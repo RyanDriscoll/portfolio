@@ -6,7 +6,7 @@ $(document).ready(function() {
     $line = $('.line'),
     $body = $('body'),
     $navHeader = $('.nav-header'),
-    $bannerText = $('#banner-text'),
+    $bannerText = $('.banner-text').first(),
     $bannerTextLine2 = $bannerText.next(),
     $logo = $('.logo'),
     $slideContent = $('.slide-content'),
@@ -99,6 +99,7 @@ $(document).ready(function() {
 
   // toggle navbar
   function toggleNav(width) {
+    if (viewWidth < 1200) return;
     let operator = showNav ? '-' : '+';
     $navHeader.animate({left: `${operator}=${width}px`});
     showNav = !showNav;
