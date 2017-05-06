@@ -58,7 +58,7 @@ body {
 }
 
 .nav-header {
-  background: transparent;
+  background: #929ddb;
   position: relative;
   width: 80vw;
   display: flex;
@@ -83,18 +83,16 @@ body {
 
 .slide {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .slide-left {
-  position: fixed;
-  top: 0;
-  left: calc(100% / 12);
-  height: 100vh;
-  display: none;
+  display: flex;
 }
 
 .slide-right {
@@ -102,16 +100,14 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
   width: 90vw;
-  /*z-index: 10;*/
+  margin: 25px 0;
   transition: all 0.5s cubic-bezier(.50, 0, .50, 1) 0.2s;
 }
 
 .slide-header {
   display: flex;
   flex-direction: column;
-  top: 20vw;
   position: relative;
 }
 
@@ -119,13 +115,13 @@ body {
   font-size: 5rem;
 }
 
-.section-headline {
+.section-tagline {
   font-size: 10vw;
 }
 
 .circle-pic {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   margin: 10px;
   background-repeat: no-repeat;
@@ -133,8 +129,8 @@ body {
 
 #profile-pic {
   background: url('assets/profile_pic_2.png');
-  background-position: -80px -4px;
-  background-size: 250px;
+  background-position: -65px -10px;
+  background-size: 200px;
 }
 
 #fs-logo {
@@ -151,15 +147,15 @@ body {
 
 #memail-logo {
   background: url('assets/memail_logo_5.png');
-  background-size: 205px;
+  background-size: 140px;
   background-position: 50% 50%;
 }
 
 #samepage-logo {
   background: url('assets/samepage.png');
-  background-position: 10px 4px;
+  background-position: 6px -1px;
   background-color: #ffffff;
-  background-size: 140px;
+  background-size: 98px;
 }
 
 .flex-row,
@@ -167,17 +163,15 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
 }
 
 .flex-col {
   flex-direction: column;
-  width: calc(100% * 2/3);
 }
 
 .flex-col h3 {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 .icons {
@@ -190,7 +184,7 @@ body {
 }
 
 .slide-right-hide {
-  right: -1000px;
+  right: auto;
 }
 
 .slide-right p {
@@ -204,27 +198,54 @@ body {
   font-size: 1.4rem;
 }
 
-.slide-right-resume .flex-col {
-  width: 100%;
-  font-size: 1.2rem;
+.slide-right-resume {
+  width: 90%;
+  font-size: 1vw;
   background-color: rgba(57, 73, 171, 0.7);
   border-radius: 3px;
   padding: 10px;
 }
 
 .slide-right-resume p {
-  font-size: 1.4rem;
+  font-size: 3em;
   width: 75%;
 }
 
+.slide-right-resume h3 {
+  font-size: 5em;
+}
+
+.slide-right-resume h4 {
+  font-size: 3em;
+}
+
+.slide-right-resume .flex-row {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.skills-labels {
+  align-items: initial;
+}
+
+.skills-labels,
+.skills {
+  height: 10vh;
+}
+
 .list-resume {
-  font-size: 1.2rem;
+  font-size: 2.5em;
   margin-top: 10px;
   text-align: justify;
+  padding-right: 20px;
 }
 
 .slide-right-contact {
   font-size: 4rem;
+}
+
+.social {
+  height: 50vh;
 }
 
 #about {
@@ -300,6 +321,7 @@ body {
   .nav-header {
     width: calc(100vw - 110px);
     justify-content: flex-end;
+    background: transparent;
   }
   .list {
     width: 60%;
@@ -319,14 +341,34 @@ body {
   }
   .slide {
     flex-direction: row;
+    height: 100vh;
   }
   .slide-left {
     align-items: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: calc(100% / 12);
+    height: 100vh;
   }
   .slide-right {
     width: calc(50% - (100% / 12));
     height: 90vh;
     right: calc(100% / 12);
+    position: absolute;
+    margin: 0;
+  }
+  .slide-right-resume {
+    height: auto;
+    font-size: .6rem;
+  }
+  .slide-right-resume h3 {
+    font-size: 3em;
+  }
+  .slide-right-resume h4,
+  .slide-right-resume p,
+  .list-resume {
+    font-size: 2em;
   }
   .slide-right-hide {
     right: -1000px;
@@ -339,12 +381,32 @@ body {
   .section-header {
     margin-bottom: 85px;
   }
-  .section-headline {
+  .section-tagline {
     font-size: 3.5rem;
     line-height: 4rem;
   }
   .section-title {
     margin-bottom: 85px;
     font-size: 5rem;
+  }
+  .circle-pic {
+    height: 150px;
+    width: 150px;
+  }
+  #profile-pic {
+    background-position: -80px -4px;
+    background-size: 250px;
+  }
+  #memail-logo {
+    background-size: 205px;
+  }
+  #samepage-logo {
+    background-position: 10px 4px;
+    background-color: #ffffff;
+    background-size: 140px;
+  }
+  .skills-labels,
+  .skills {
+    height: 15vh;
   }
 }

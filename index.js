@@ -155,9 +155,9 @@ $(document).ready(function() {
     }
   }
 
-  function switchSlideRightMobile(top, windowHeight) {
-    let ratio = top / windowHeight;
-  }
+  // function switchSlideRightMobile(top, windowHeight) {
+  //   let ratio = top / windowHeight;
+  // }
 
   // window scroll events
   $window.scroll(function() {
@@ -177,33 +177,35 @@ $(document).ready(function() {
       toggleNav(viewWidth);
     }
     // slide content in and out
-    if (mobile) {
-      switchSlideRightMobile(top, windowHeight);
-    } else {
+    // if (mobile) {
+    //   switchSlideRightMobile(top, windowHeight);
+    // } else {
       switchSlideRight(top, windowHeight);
-    }
+    // }
 
     // clip slide sections
-    showSlideText(
-      $about,
-      windowHeight - top,
-      (windowHeight * -1) + top
-    );
-    showSlideText(
-      $projects,
-      (windowHeight * 2) - top,
-      (windowHeight * -2) + top
-    );
-    showSlideText(
-      $resume,
-      (windowHeight * 3) - top,
-      (windowHeight * -3) + top
-    );
-    showSlideText(
-      $contact,
-      (windowHeight * 4) - top,
-      (windowHeight * -4) + top
-    );
+    if (!mobile) {
+      showSlideText(
+        $about,
+        windowHeight - top,
+        (windowHeight * -1) + top
+      );
+      showSlideText(
+        $projects,
+        (windowHeight * 2) - top,
+        (windowHeight * -2) + top
+      );
+      showSlideText(
+        $resume,
+        (windowHeight * 3) - top,
+        (windowHeight * -3) + top
+      );
+      showSlideText(
+        $contact,
+        (windowHeight * 4) - top,
+        (windowHeight * -4) + top
+      );
+    }
   });
 
 });
