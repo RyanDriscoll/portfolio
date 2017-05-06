@@ -32,7 +32,6 @@ body {
 
 .header {
   position: fixed;
-  width: 100%;
   height: 20vw;
   z-index: 999;
   display: flex;
@@ -61,7 +60,7 @@ body {
 .nav-header {
   background: transparent;
   position: relative;
-  width: calc(100% - 20vw);
+  width: 80vw;
   display: flex;
   align-items: center;
 }
@@ -69,13 +68,12 @@ body {
 .list {
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  padding: 0;
+  width: 80vw;
   list-style: none;
 }
 
-.list > li {
-  font-size: 4vw;
+.list>li {
+  font-size: 5vw;
   cursor: pointer;
 }
 
@@ -103,24 +101,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 90vw;
+  /*z-index: 10;*/
+  transition: all 0.5s cubic-bezier(.50, 0, .50, 1) 0.2s;
 }
 
 .slide-header {
-  margin-left: 30px;
   display: flex;
   flex-direction: column;
-  top: 15vh;
+  top: 20vw;
   position: relative;
 }
 
 .section-title {
-  margin-bottom: 85px;
   font-size: 5rem;
 }
 
 .section-headline {
-  font-size: 3.5rem;
-  line-height: 4rem;
+  font-size: 10vw;
 }
 
 .circle-pic {
@@ -187,16 +187,6 @@ body {
 
 .icons i {
   margin: 10px;
-}
-
-.slide-right {
-  width: calc(50% - (100% / 12));
-  height: 90%;
-  align-items: center;
-  position: absolute;
-  right: calc(100% / 12);
-  z-index: 10;
-  transition: all 0.5s cubic-bezier(.50, 0, .50, 1) 0.2s;
 }
 
 .slide-right-hide {
@@ -289,10 +279,8 @@ body {
 }
 
 @media only screen and (min-width: 900px) {
-
   .header {
     height: 110px;
-    width: 100%;
   }
   .logo {
     width: 110px;
@@ -310,13 +298,13 @@ body {
     transition: all 0.2s ease-out;
   }
   .nav-header {
-    width: calc(100% - 110px);
+    width: calc(100vw - 110px);
     justify-content: flex-end;
   }
   .list {
     width: 60%;
   }
-  .list > li {
+  .list>li {
     font-size: 1.3rem;
   }
   [class^="banner-text"] {
@@ -335,8 +323,28 @@ body {
   .slide-content {
     align-items: center;
   }
+  .slide-right {
+    width: calc(50% - (100% / 12));
+    height: 90vh;
+    right: calc(100% / 12);
+  }
+  .slide-right-hide {
+    right: -1000px;
+  }
   .slide-header {
     justify-content: space-around;
     top: auto;
+    margin-left: 30px;
+  }
+  .section-header {
+    margin-bottom: 85px;
+  }
+  .section-headline {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+  .section-title {
+    margin-bottom: 85px;
+    font-size: 5rem;
   }
 }
